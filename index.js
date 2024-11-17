@@ -13,7 +13,7 @@ const app = express()
 app.get('/', (req, res) =>{
     res.send("Bot is running")
 })
-const port = 3000;
+const port = 3001;
 app.listen(port, () => {
     console.log(`server running https://localhost:${port}`);
 })
