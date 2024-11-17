@@ -11,7 +11,7 @@ const express = require('express')
 const app = express()
 
 app.get('/', (req, res) =>{
-    res.send("Bot is alive")
+    res.send("Bot is running")
 })
 const port = 3000;
 app.listen(port, () => {
@@ -58,6 +58,7 @@ bot.on('message', (msg) => {
     //     }
     //     console.log('Ma\'lumotlar faylga saqlandi.');
     // });
+
     const locations = [
         {
             name: "CHILONZOR",
