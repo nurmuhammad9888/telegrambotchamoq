@@ -19,7 +19,7 @@ app.listen(port, () => {
 })
 
 // Kalit so'zlar
-const keywords = ['chaqmoq taxi ofis','chaqmoq tezkor taxi','chilonzor', 'qorasuv', 'yunusobod', 'yunusobot', 'admin', 'pul yechib', 'admen', 'admn', 'yordam', 'aloo', 'tel nomer','tel nomir', 'tel raqam','pul yechish', 'pul chiqarish', 'qarz berib', 'qarz tashlab', 'limit', 'lokatsiya', 'lakatsiya', 'чақмоқ тахи офис', 'чақмоқ тезкор тахи', 'чилонзор', 'қорасув', 'юнусобод', 'юнусобот', 'адмен', 'админ', 'адмн', 'пул ечиш', 'пул чиқариш', 'лакация', 'локация', 'тел номер', 'тел номир','қарз бериб' ,'қарз ташлаб' ,'лимит' ,'локация' ,'лакация'];
+const keywords = ['chaqmoq taxi ofis','chaqmoq tezkor taxi','chilonzor', 'qorasuv', 'admin', 'pul yechib', 'admen', 'admn', 'yordam', 'aloo', 'tel nomer','tel nomir', 'tel raqam','pul yechish', 'pul chiqarish', 'qarz berib', 'qarz tashlab', 'limit', 'lokatsiya', 'lakatsiya', 'чақмоқ тахи офис', 'чақмоқ тезкор тахи', 'чилонзор', 'қорасув', 'адмен', 'админ', 'адмн', 'пул ечиш', 'пул чиқариш', 'лакация', 'локация', 'тел номер', 'тел номир','қарз бериб' ,'қарз ташлаб' ,'лимит' ,'локация' ,'лакация'];
 
 // Habardagi kalit so'zlarni aniqlash uchun funksiya
 function findKeywords(message) {
@@ -73,20 +73,11 @@ bot.on('message', (msg) => {
             name: "QORASUV",
             name_link:'qorasuv',
             name_r:'қорасув',
-            work_time: "(08:00 - 23:00) ",
+            work_time: "(08:00 - 00:00) ",
             phone: "+998951339717",
             telegram: "@CHAQMOQ_TEZKOR_QORASUV",
             url: "https://yandex.uz/navi?whatshere%5Bpoint%5D=69.36808590276627%2C41.3337965128391&whatshere%5Bzoom%5D=17.466913&ll=69.36823839804416%2C41.33404797332733&z=17.466913&si=6gzu1bfxbbu537hxtubbjph5um",
         },
-        {
-            name: "YUNUSOBOD",
-            name_link:'yunusobod',
-            name_r:'юнусобод',
-            work_time: "(08:00 - 00:00)",
-            phone: "+998942269717",
-            telegram: "@CHAQMOR_TEZKOR_YUNUSOBOD",
-            url: "https://yandex.uz/navi?whatshere%5Bpoint%5D=69.2690017269279%2C41.36842014794523&whatshere%5Bzoom%5D=16.74843&ll=69.26923296759568%2C41.36923353990003&z=16.74843&si=6gzu1bfxbbu537hxtubbjph5um",
-        }
     ];
     
     // Avtomatik javoblar
@@ -117,7 +108,7 @@ bot.on('message', (msg) => {
                 `🔘 OFISNING IMKONYATLARI \n `+
                 `🔴 Taximetrdagi muammolaringizni bartaraf etish \n ` +
                 `🔴 Hisobingizni to'ldirganingizda +20% Bonus \n ` +
-                `🔴 Hisobdan pul yechish 24/7 (T/g bot) \n ` +
+                `🔴 Hisobdan pul yechish 24/7 0% (T/g bot) \n ` +
                 `🔴 Avto Sug'irta \n ` +
                 `🔴 Litsenziya taxi \n ` +
                 `🔴 Oynalar tusini o'zgartrish (ruxsatnoma) \n ` +
@@ -127,8 +118,8 @@ bot.on('message', (msg) => {
         
         if (foundKeywords.length > 0 && foundKeywords[0] === "pul yechish" || foundKeywords[0] === "pul chiqarish" || foundKeywords[0] === "пул чиқариш" || foundKeywords[0] === "пул ечиш") {
             bot.sendMessage(chatId,
-                ` ASSALOMU ALAYKUM  PUL YECHISH ''CHAQMOQ TEZKOR''NING MAXSUS BOTI ORQALI 24/7 YECHIB OLISHINGIZ MUMKIN \n` +
-                ` https://t.me/CHAQMOQ_TEZKOR_BOT \n` + 
+                ` ASSALOMU ALAYKUM PUL YECHISH ''CHAQMOQ TEZKOR''NING MAXSUS BOTI ORQALI 24/7 0% BILAN YECHIB OLISHINGIZ MUMKIN \n` +
+                ` @CHAQMOQ_TEZKOR_BOT \n` + 
                 `  \n\n`,
                 {...replay ,...htmlTeg})
             } 
@@ -137,9 +128,8 @@ bot.on('message', (msg) => {
                     `👋Assalomu alaykum \n`+
                     `🧐Sizga qanday yordam bera olaman ? \n`+
                     `🙋‍♂️ Iltimos operator javobini kuting \n`+
-                    `✈️@CHAQMOQ_TEZKOR_CHILONZOR  \n `+
-                    `✈️@CHAQMOQ_TEZKOR_QORASUV \n `+
-                    `✈️@CHAQMOR_TEZKOR_YUNUSOBOD \n `+
+                    `✈️@CHAQMOQ_TEZKOR_CHILONZOR  24/7 \n `+
+                    `✈️@CHAQMOQ_TEZKOR_QORASUV  (08:00 - 00:00) \n `+
                     `📱+998941659717 biz bilan bog'laning \n`,
                     {...replay ,...htmlTeg})
                 }
@@ -147,9 +137,8 @@ bot.on('message', (msg) => {
                     bot.sendMessage(chatId, 
                         `👋Assalomu alaykum \n`+
                         `🧐Sizga qanday yordam bera olaman ? \n`+
-                        `+998941659717 CHILONZOR \n `+
-                        `+998951339717 QORASUV \n `+
-                        `+998942269717 YUNUSOBOD biz bilan bog'laning \n `,
+                        `+998941659717 CHILONZOR 24/7 \n `+
+                        `+998951339717 QORASUV (08:00 - 00:00) biz bilan bog'laning \n `,
                         {...replay ,...htmlTeg})
                     }
                     else if (foundKeywords.length > 0 && foundKeywords[0] === 'lakatsiya' || foundKeywords[0] === 'lokatsiya'|| foundKeywords[0] === 'локация' || foundKeywords[0] === 'лакация' ) {
@@ -191,14 +180,9 @@ bot.on('message', (msg) => {
                         `📝   @CHAQMOQ_TEZKOR_CHILONZOR \n\n`
                         +
                         `2.🔔 QORASUV \n `+
-                        `💠  ISH VAQTI (08:00 - 23:00) \n `+
+                        `💠  ISH VAQTI (08:00 - 00:00) \n `+
                         `☎️  +998951339717 \n `+
                         `📝  @CHAQMOQ_TEZKOR_QORASUV \n\n`
-                        +
-                        `3.🔔 YUNUSOBOD \n`+
-                        `💠  ISH VAQTI (08:00 - 00:00) \n`+
-                        `☎️  +998942269717 \n`+
-                        `📝  @CHAQMOR_TEZKOR_YUNUSOBOD \n\n` 
                         +
                         
                         `<b> Оfisimiz orqali  taksometr balansini to'ldirsangiz +20% BONUSga ega bo'lasiz! </b> \n\n`+
